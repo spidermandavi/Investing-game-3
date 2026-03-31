@@ -156,19 +156,40 @@ function applyDividends() {
 // ===== EVENTS =====
 
 function randomEvent(){
-  if(turn < 10) return;
-  if(Math.random() > 0.15) return;
+  if(turn < 10) return;            
+  if(Math.random() > 0.2) return;  
 
   let events = [
-    {text:"Crashed car", value:-500},
-    {text:"Gift", value:200},
-    {text:"Repairs", value:-100},
-    {text:"Clothes", value:-50},
-    {text:"Phone broken", value:-240},
-    {text:"Birthday", value:75},
-    {text:"Furniture", value:-300},
-    {text:"Bills", value:-615},
-    {text:"Tax return", value:150}
+    {text:"Crashed car", value:-500, weight:1},
+    {text:"Gift", value:200, weight:3},
+    {text:"Repairs", value:-100, weight:2},
+    {text:"Clothes", value:-50, weight:4},
+    {text:"Phone broken", value:-240, weight:2},
+    {text:"Birthday", value:75, weight:3},
+    {text:"Furniture", value:-300, weight:1},
+    {text:"Flowers", value:-20, weight:5},
+    {text:"Tax return", value:150, weight:3}
+  ];
+
+  let weightedEvents = [];
+  events.forEach(e => {
+    for(let i=0; i<e.weight; i++) weightedEvents.push(e);
+  });
+
+  let i = Math.floor(Math.random() * players.length);
+  let player = players[i];
+
+  let e = weightedEvents[Math.floor(Math.random() * weightedEvents.length)];
+
+  // Apply event
+  player.money += e.value;
+
+  // Flash the affected player
+  flashPlayer(i, e.value >= 0 ? "#4caf50" : "#ff4c4c", 1000); // green for gain, red for loss
+
+  // Show popup for affected player
+  popup(`Event for ${player.name}: ${e.text}\n${e.value >= 0 ? "+" : ""}$${e.value}`);
+}
   ];
 
   let e = events[Math.floor(Math.random()*events.length)];
