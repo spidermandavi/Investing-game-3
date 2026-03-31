@@ -39,9 +39,11 @@ function render() {
   stocks.forEach((s, i) => {
     let row = document.createElement("tr");
 
-    let changeClass = "neutral";
-    if (s.change > 0) changeClass = "green";
-    if (s.change < 0) changeClass = "red";
+    let change = s.change ?? 0;
+
+let changeClass = "neutral";
+if (change > 0) changeClass = "green";
+if (change < 0) changeClass = "red";
 
     row.innerHTML = `
       <td onclick="toggleInfo(${i})">${s.name}</td>
