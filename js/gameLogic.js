@@ -8,12 +8,12 @@ let gameMode = "turns";
 let modeValue = 20;
 
 let stocks = [
-  { name: "CDJ", price: 10, volatility: 0.10, owned: {}, totalSpent: {}, desc: "Clothing company, medium risk." },
-  { name: "Panda & Co.", price: 10, volatility: 0.06, owned: {}, totalSpent: {}, desc: "Stable bank." },
-  { name: "GRAY-BOX", price: 10, volatility: 0.04, owned: {}, totalSpent: {}, desc: "Safe insurance." },
-  { name: "BA", price: 10, volatility: 0.20, owned: {}, totalSpent: {}, desc: "Very volatile sports brand." },
-  { name: "SEED", price: 10, volatility: 0.12, owned: {}, totalSpent: {}, desc: "Agriculture, event-driven." },
-  { name: "EXTRA FRESH", price: 10, volatility: 0.08, owned: {}, totalSpent: {}, desc: "Food, steady growth." }
+  { name: "CDJ", price: 10, volatility: 0.20, owned: {}, totalSpent: {}, desc: "Clothing company, medium risk." },
+  { name: "Panda & Co.", price: 10, volatility: 0.12, owned: {}, totalSpent: {}, desc: "Stable bank." },
+  { name: "GRAY-BOX", price: 10, volatility: 0.10, owned: {}, totalSpent: {}, desc: "Safe insurance." },
+  { name: "BA", price: 10, volatility: 0.40, owned: {}, totalSpent: {}, desc: "Very volatile sports brand." },
+  { name: "SEED", price: 10, volatility: 0.25, owned: {}, totalSpent: {}, desc: "Agriculture, event-driven." },
+  { name: "EXTRA FRESH", price: 10, volatility: 0.20, owned: {}, totalSpent: {}, desc: "Food, steady growth." }
 ];
 
 let playerColors = ["#ff4c4c","#4caf50","#2196f3","#ff9800"];
