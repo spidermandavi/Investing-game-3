@@ -51,4 +51,13 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+  function launchConfetti() {
+  const duration = 2000;
+  const end = Date.now() + duration;
+
+  const interval = setInterval(() => {
+    if (Date.now() > end) return clearInterval(interval);
+
+    const confetti = document
+  }
 }
